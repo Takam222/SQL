@@ -1,0 +1,69 @@
+/* A list of Celebrities and Their Current Age*/
+
+CREATE TABLE Celebrities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER);
+    
+INSERT into Celebrities (fullname, age) VALUES("Emma Stone", "34");
+INSERT into Celebrities (fullname, age) VALUES("Ryan Gosling", "42");
+INSERT into Celebrities (fullname, age) VALUES("Seth Rogen", "41");
+INSERT into Celebrities (fullname, age) VALUES("James Franco", "45");
+INSERT into Celebrities (fullname, age) VALUES("Jennifer Lawrence", "32");
+INSERT into Celebrities (fullname, age) VALUES("Scarlett Johansson", "38");
+
+/* The Age Celebrity Had Their Big Break*/
+
+CREATE TABLE BigBreak (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id INTEGER,
+    age INTEGER, movie TEXT);
+    
+INSERT into BigBreak (person_id, age, movie) VALUES("1", "21", "Easy A");
+INSERT into BigBreak (person_id, age, movie) VALUES("2", "24", "The Notebook");
+INSERT into BigBreak (person_id, age, movie) VALUES("3", "25", "Knocked Up");
+INSERT into BigBreak (person_id, age, movie) VALUES("4", "23", "James Dean");
+INSERT into BigBreak (person_id, age, movie) VALUES("5", "21", "Hunger Games");
+INSERT into BigBreak (person_id, age, movie) VALUES("6", "17", "Lost in Translation");
+
+    
+/*Celebrities Marriage Status*/
+
+CREATE TABLE Relationship (
+id INTEGER PRIMARY KEY AUTOINCREMENT, person_id INTEGER, 
+status TEXT);
+
+INSERT into Relationship (person_id, status) VALUES("1", "Married");
+INSERT into Relationship (person_id, status) VALUES("2", "Married");
+INSERT into Relationship (person_id, status) VALUES("3", "Married");
+INSERT into Relationship (person_id, status) VALUES("4", "Single");
+INSERT into Relationship (person_id, status) VALUES("5", "Married");
+INSERT into Relationship (person_id, status) VALUES("6", "Married");
+
+/*Celebrities Who Have Worked Together*/ 
+
+CREATE table CoStars (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person1_id INTEGER,
+    person2_id INTEGER);
+
+INSERT INTO CoStars (person1_id, person2_id)
+    VALUES (3, 4);
+INSERT INTO CoStars (person1_id, person2_id)
+    VALUES (1, 2);
+INSERT INTO CoStars (person1_id, person2_id)
+    VALUES (5,6);
+    
+/* Show all the Celebrities Listed and what their Relationship status is*/
+
+SELECT celebrities.fullname, celebrities.age, relationship.status
+FROM celebrities 
+JOIN Relationship ON celebrities.id = relationship.person_id;
+
+/*Celebrities Who have Worked Together */
+
+SELECT a.fullname AS "Co-Star ", b.fullname AS "Co-Star " FROM CoStars 
+    JOIN Celebrities A
+    ON costars.person1_id=a.id
+    JOIN Celebrities B 
+    ON costars.person2_id=b.id;
