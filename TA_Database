@@ -4,3 +4,9 @@
 SELECT COUNT(OrderID)
 FROM TA_DB.JanSales WHERE length(orderid) = 6
 AND orderid <> 'Order ID'
+
+#2. How many of those orders were for an iPhone?
+
+SELECT COUNT(OrderID)
+FROM TA_DB.JanSales WHERE length(orderid) = 6
+AND orderid <> 'Order ID' AND Product='iPhone'
