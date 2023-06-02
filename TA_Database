@@ -10,3 +10,11 @@ AND orderid <> 'Order ID'
 SELECT COUNT(OrderID)
 FROM TA_DB.JanSales WHERE length(orderid) = 6
 AND orderid <> 'Order ID' AND Product='iPhone'
+
+#3. Select the customer account numbers for all the orders that were placed in February.
+
+SELECT acctnum
+FROM TA_DB.FebSales feb
+LEFT JOIN TA_DB.customers customers
+ON feb.orderid=customers.acctnum 
+WHERE acctnum IS NOT NULL
