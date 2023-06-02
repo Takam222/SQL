@@ -1,0 +1,6 @@
+#The Questions Below are Queries for a Database with Customer Information on RDMS SQLiteStudio
+
+#1. How many orders were placed in January? 
+SELECT COUNT(OrderID)
+FROM TA_DB.JanSales WHERE length(orderid) = 6
+AND orderid <> 'Order ID'
