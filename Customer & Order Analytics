@@ -55,9 +55,10 @@ AND orderid <> 'Order ID'
 
 #8. List all the products sold in LA in Februrary, and include how many of each were sold.
 
-SELECT distinct Product, Quantity, Location
+SELECT distinct Product, SUM(Quantity) as Sum
 FROM TA_DB.FebSales
 WHERE location like "%Los Angeles%"
+GROUP BY product
 
 
 
