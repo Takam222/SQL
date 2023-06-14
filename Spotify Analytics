@@ -3,7 +3,7 @@
 
 #Creating the table: 
 
-CREATE TABLE BIT_DB.Spotifydata (
+CREATE TABLE TA_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
 track_name varchar NOT NULL,
@@ -33,4 +33,13 @@ time_signature integer NOT NULL
 SELECT track_name as Song, artist_name as Artist, popularity as Popularity
 FROM TA_DB.Spotifydata
 ORDER BY popularity DESC LIMIT 10
+
+#Which Artist on the list released the longest song?
+
+SELECT track_name as Song, artist_name as Artist, duration_ms as Duration
+FROM TA_DB.Spotifydata
+ORDER BY Duration DESC 
+LIMIT 1
+
+
 
