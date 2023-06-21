@@ -55,4 +55,9 @@ JOIN Invoices inv
 ON inv.customerID = cust.customerId
 WHERE title like '%sales%'
 
+#-- How many invoices were there in 2009?
+SELECT COUNT(*)
+FROM Invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
+
 
