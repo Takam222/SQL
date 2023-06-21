@@ -43,3 +43,14 @@ ON inv.customerid = cust.customerId
 JOIN Customers cust
 ON cust.supportrepid = emp.employeeid
 WHERE Title like '%sales%'
+
+#-- Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
+
+SELECT inv.Total, inv.InvoiceId, cust.FirstName as CFN, cust.LastName as CLN, 
+cust.Country, emp.FirstName as AFN, emp.LastName as ALN
+FROM Customers cust
+JOIN Employees emp 
+ON cust.SupportRepId = emp.employeeId
+JOIN Invoices inv
+ON inv.customerID = cust.customerId
+WHERE title like '%sales%'
