@@ -17,3 +17,13 @@ FROM Customers as cust
 LEFT JOIN Invoices as inv
 ON inv.customerid = cust.customerid
 WHERE BillingCountry = 'Brazil'
+
+# -- Show Employees who are Sales Agents
+
+SELECT * FROM Employees
+WHERE Title = "Sales Support Agent" 
+
+OR 
+
+SELECT * FROM employees
+WHERE Title like '%agent%'
