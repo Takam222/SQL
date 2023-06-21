@@ -106,6 +106,20 @@ ON emp.employeeID = cust.supportrepID
 WHERE title like '%sales%'
 GROUP BY emp.FirstName
 
+#Which Agent made the most money in sales in 2009?
+
+SELECT ROUND(SUM(Inv.Total), 2) as 'Total Sales' , emp.FirstName, emp.LastName, emp.Title
+FROM invoices inv
+JOIN customers cust
+ON cust.customerid=inv.customerid
+JOIN employees emp
+ON emp.employeeID = cust.supportrepID
+WHERE title like '%sales%'
+AND inv.invoicedate like '2009%'
+GROUP BY emp.FirstName
+ORDER BY (round(sum(inv.total),2)) DESC LIMIT 1;
+
+
 
 
 
