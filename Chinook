@@ -84,4 +84,18 @@ ON a.AlbumID=t.AlbumID
 LEFT JOIN artists ar
 ON ar.ArtistID=a.ArtistID
 
+#--Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+
+SELECT tr.name as 'Track Name', alb.title as 'Album', med.Name as 'Media Type', g.Name as 'Genre'
+FROM tracks tr
+LEFT JOIN albums alb
+ON tr.albumid = alb.albumid
+LEFT JOIN media_types med
+ON med.mediatypeid = tr.mediatypeid
+LEFT JOIN genres g
+ON g.genreid = tr.genreid
+
+
+
+
 
