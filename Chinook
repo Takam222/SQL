@@ -66,4 +66,18 @@ SELECT SUM(Total)
 FROM Invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
 
+#
+
+
+# --Write a query that includes the purchased track name AND artist name with each invoice line ID.
+
+SELECT ar.name as Artist, t.Name as Track, i.InvoiceLineId
+FROM Invoice_items i
+LEFT JOIN tracks t 
+ON i.TrackID=t.TrackID
+INNER JOIN albums a
+ON a.AlbumID=t.AlbumID
+LEFT JOIN artists ar
+ON ar.ArtistID=a.ArtistID
+
 
