@@ -60,4 +60,10 @@ SELECT COUNT(*)
 FROM Invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
 
+#--Total sales for 2009?
+
+SELECT SUM(Total)
+FROM Invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
+
 
