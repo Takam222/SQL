@@ -95,6 +95,17 @@ ON med.mediatypeid = tr.mediatypeid
 LEFT JOIN genres g
 ON g.genreid = tr.genreid
 
+#-- Show the total sales made by each sales agent.
+
+SELECT ROUND(SUM(Inv.Total), 2) as 'Total Sales' , emp.FirstName, emp.LastName, emp.Title
+FROM invoices inv
+JOIN customers cust
+ON cust.customerid=inv.customerid
+JOIN employees emp
+ON emp.employeeID = cust.supportrepID
+WHERE title like '%sales%'
+GROUP BY emp.FirstName
+
 
 
 
