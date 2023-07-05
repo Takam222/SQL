@@ -1,3 +1,5 @@
+#In this project, I downloaded a dataset and created multiple queries to pull interesting info from it.
+
 # -- Show Customers ( their full names, customer ID, and country) who are not in the US.
 
 SELECT CustomerId, FirstName, LastName, Country FROM customers
@@ -66,14 +68,14 @@ SELECT SUM(Total)
 FROM Invoices
 WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
 
-#-- Write a query that includes the purchased track name with each invoice line ID.
+#-- A query that includes the purchased track name with each invoice line ID.
 
 SELECT t.name, i.invoicelineID
 FROM tracks t
 JOIN invoice_items i
 ON t.trackid=i.trackid
 
-# --Write a query that includes the purchased track name AND artist name with each invoice line ID.
+# --A query that includes the purchased track name AND artist name with each invoice line ID.
 
 SELECT ar.name as Artist, t.Name as Track, i.InvoiceLineId
 FROM Invoice_items i
@@ -84,7 +86,7 @@ ON a.AlbumID=t.AlbumID
 LEFT JOIN artists ar
 ON ar.ArtistID=a.ArtistID
 
-#--Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+#--A query that shows all the Tracks, and include the Album name, Media type, and Genre.
 
 SELECT tr.name as 'Track Name', alb.title as 'Album', med.Name as 'Media Type', g.Name as 'Genre'
 FROM tracks tr
