@@ -74,7 +74,7 @@ INSERT INTO TA_DB.CityBikeLanes values(60,2002, 2021,"Mouse",4.5,4.3,"no");
 #Then I performed analytics on the data using SQL.
 
 
-#-- Using a CTE, list of all the bike lanes with AVG safety rating of 4.0 or higher, want to see avg for EACH bike lane and add "Safe Lane" label.
+#-- Using a CTE, I list of all the bike lanes with AVG safety rating of 4.0 or higher, want to see avg for EACH bike lane and add "Safe Lane" label.
 
 WITH Safe_Lanes AS(
 SELECT street, avg(c.safetyrating) as rating
@@ -85,8 +85,7 @@ SELECT street, rating, 'Safe Lane' AS 'Label'
 FROM Safe_Lanes
 WHERE rating>=4.0;
 
---Using a Window Function, list all of the bike lanes, both safety ratings for each lane, the avg safety rating for each lane, and label with reccomendations such as
---"Remove", "Leave As-Is", or "Improvements Needed"
+--Using a Window Function, I list all of the bike lanes, both safety ratings for each lane, the avg safety rating for each lane, and label with reccomendations such as "Remove", "Leave As-Is", or "Improvements Needed"
 SELECT street, safetyrating,
 AVG(safetyrating) OVER (PARTITION BY street) as 'Avg_Safety', 
 CASE
