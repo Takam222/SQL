@@ -1,3 +1,5 @@
+#In this project I created a table that held attributes about different Celebrities, and used queries to collect various info from  it.
+
 /* A list of Celebrities and Their Current Age*/
 
 CREATE TABLE Celebrities (
