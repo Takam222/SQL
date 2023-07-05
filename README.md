@@ -1,4 +1,4 @@
-![](https://pbs.twimg.com/media/F0QHd3lWcAAZIMi?format=jpg&name=small)
+![]([https://pbs.twimg.com/media/F0QHd3lWcAAZIMi?format=jpg&name=small](https://pbs.twimg.com/media/F0QHd3lWcAAZIMi?format=jpg&name=4096x4096))
 
 <center>Welcome to my SQL Portfolio! This code repository contains examples of SQL I've written. I am a Technical Professional that is passionate about data-driven decision making. I am a self-proclaimed lifelong student, as I thoroughly enjoy continuously challenging myself to learn and expand my knowledge.
 
